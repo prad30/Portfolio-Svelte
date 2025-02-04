@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap');
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+*::selection {
+	background-color: #f7eaa0;
+	color: #202020;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+	transition: 0.3s;
+}
+
+ul {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+body {
+	font-family: 'Lexend', sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	background-color: #202020;
+}
+
+
+
