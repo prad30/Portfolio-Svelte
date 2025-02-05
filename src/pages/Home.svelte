@@ -1,39 +1,46 @@
 <script>
+    import {fade} from 'svelte/transition';
+    let show = true;
 </script>
 
-<div class="container">
-    <div class="HomeElement">
-        <div class="profile-photo">
-            <img src="./assets/photo!!.png" alt="" />
-        </div>
-        <div class="profile-text">
-            <h1>Hi I'm Ragu</h1>
-            <br /> <br />
-            <p>
-                <br />An enthusiastic Data Analyst, with a strong passion for
-                uncovering meaningful insights through the application of data
-                science techniques.
-            </p>
-
-            <div class="btn-group">
-                <a href="./assets/Resume.pdf" class="btn active">Download CV</a>
-                <a href="mailto:https.ragu@gmail.com" class="btn">Contact</a>
+{#if show}
+    <div class="container" transition:fade>
+        <div class="HomeElement">
+            <div class="profile-photo">
+                <img src="./assets/photo!!.png" alt="" />
             </div>
+            <div class="profile-text">
+                <h1>Hi I'm Ragu</h1>
+                <br /> <br />
+                <p>
+                    <br />An enthusiastic Data Analyst, with a strong passion
+                    for uncovering meaningful insights through the application
+                    of data science techniques.
+                </p>
 
-            <div class="social">
-                <a href="mailto:https.ragu@gmail.com"
-                    ><i class="fa fa-envelope"></i></a
-                >
-                <a href="https://github.com/ragu8"
-                    ><i class="fa-brands fa-github"></i></a
-                >
-                <a href="https://www.linkedin.com/in/ragu8/"
-                    ><i class="fa-brands fa-linkedin"></i></a
-                >
+                <div class="btn-group">
+                    <a href="./assets/Resume.pdf" class="btn active"
+                        >Download CV</a
+                    >
+                    <a href="mailto:https.ragu@gmail.com" class="btn">Contact</a
+                    >
+                </div>
+
+                <div class="social">
+                    <a href="mailto:https.ragu@gmail.com"
+                        ><i class="fa fa-envelope"></i></a
+                    >
+                    <a href="https://github.com/ragu8"
+                        ><i class="fa-brands fa-github"></i></a
+                    >
+                    <a href="https://www.linkedin.com/in/ragu8/"
+                        ><i class="fa-brands fa-linkedin"></i></a
+                    >
+                </div>
             </div>
         </div>
     </div>
-</div>
+{/if}
 
 <style lang="scss">
     .HomeElement {
@@ -62,7 +69,7 @@
     .profile-photo img {
         height: 100%;
         width: 100%;
-        transition: 1s;
+        transition: 0.8s;
     }
 
     .HomeElement .profile-photo img:hover {
