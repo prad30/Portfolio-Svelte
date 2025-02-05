@@ -1,10 +1,10 @@
 <script>
-    import {fade} from 'svelte/transition';
+    import {slide} from 'svelte/transition';
     let show = true;
 </script>
 
 {#if show}
-    <div class="container" transition:fade>
+    <div class="container" transition:slide>
         <div class="HomeElement">
             <div class="profile-photo">
                 <img src="./assets/photo!!.png" alt="" />
@@ -27,15 +27,16 @@
                 </div>
 
                 <div class="social">
-                    <a href="mailto:https.ragu@gmail.com"
-                        ><i class="fa fa-envelope"></i></a
-                    >
-                    <a href="https://github.com/ragu8"
-                        ><i class="fa-brands fa-github"></i></a
-                    >
-                    <a href="https://www.linkedin.com/in/ragu8/"
-                        ><i class="fa-brands fa-linkedin"></i></a
-                    >
+                    <a href="mailto:https.ragu@gmail.com" aria-label="Send an email to Ragu">
+                        <i class="fa fa-envelope"></i>
+                    </a>
+                    <a href="https://github.com/ragu8" aria-label="Visit Ragu's GitHub profile">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ragu8/" aria-label="Visit Ragu's LinkedIn profile">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    
                 </div>
             </div>
         </div>
@@ -126,7 +127,7 @@
     }
 
     @media only screen and (max-width: 767px) {
-        .FirstElement .profile-text p {
+        .HomeElement .profile-text p {
             text-align: justify;
         }
     }
