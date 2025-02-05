@@ -1,8 +1,10 @@
 <script>
     import { onMount } from "svelte";
     import { link } from "svelte-spa-router";
+    import { slide,fade } from "svelte/transition";
 
-    let activePage = "/home"; 
+    let activePage = "/home";
+    let menuOpen = false;
 
     onMount(() => {
         if (window.location.pathname !== "#/home") {
@@ -12,7 +14,13 @@
 
     function setActivePage(page) {
         activePage = page;
+        menuOpen = false;
     }
+
+    // function toggleMenu() {
+    //     menuOpen = !menuOpen;
+    // }
+
 </script>
 
 <header class="header-area">
@@ -26,7 +34,8 @@
                 />
                 <i class="fa fa-bolt"></i>
             </a>
-            <ul class="navbar">
+            {#if menuOpen}
+            <ul class="navbar" class:open={menuOpen} transition:fade>
                 <li>
                     <a
                         href="/home"
@@ -60,9 +69,44 @@
                     >
                 </li>
             </ul>
-            <div class="menu_icon">
+            {/if}
+            <ul class="navbar" class:open={menuOpen} transition:slide>
+                <li>
+                    <a
+                        href="/home"
+                        use:link
+                        class={activePage === "/home" ? "active" : ""}
+                        on:click={() => setActivePage("/home")}>Home</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="/about"
+                        use:link
+                        class={activePage === "/about" ? "active" : ""}
+                        on:click={() => setActivePage("/about")}>About</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="/projects"
+                        use:link
+                        class={activePage === "/projects" ? "active" : ""}
+                        on:click={() => setActivePage("/projects")}>Projects</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="/contact"
+                        use:link
+                        class={activePage === "/contact" ? "active" : ""}
+                        on:click={() => setActivePage("/contact")}>Contact</a
+                    >
+                </li>
+            </ul>
+            <button class="menu_icon" on:click={()=>menuOpen = !menuOpen} aria-label="Toggle menu">
                 <i class="fa fa-bars"></i>
-            </div>
+            </button>
         </div>
     </div>
 </header>
@@ -134,14 +178,32 @@
         font-size: 18px;
         cursor: pointer;
         display: none;
+        border: none;
+        background-color:#202020;
     }
 
     @media only screen and (max-width: 767px) {
         .header .menu_icon {
             display: block;
         }
+
         .header i {
             color: #e5e5e5;
+        }
+        
+        .navbar {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background-color: #202020;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .navbar.open {
+            display: flex;
         }
     }
 </style>
