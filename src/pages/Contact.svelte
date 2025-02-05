@@ -1,30 +1,79 @@
 <script>
     import { fade } from "svelte/transition";
     let show = true;
+
+    let name = "";
+    let email = "";
+    let message = "";
+    let msg = "";
+
+    const scriptURL =
+        "process.env.VITE_script_URL";
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData();
+        formData.append("name", name);
+        formData.append("email", email);
+        formData.append("message", message);
+
+        try {
+            const response = await fetch(scriptURL, {
+                method: "POST",
+                body: formData,
+            });
+
+            if (response.ok) {
+                msg = "Message sent successfully";
+                setTimeout(() => {
+                    msg = "";
+                }, 5000);
+
+                // Reset form fields
+                name = "";
+                email = "";
+                message = "";
+            } else {
+                msg = "Error: Unable to send message";
+            }
+        } catch (error) {
+            console.error("Error!", error.message);
+            msg = "Error: Unable to send message";
+        }
+    };
 </script>
 
 {#if show}
     <div class="container" transition:fade>
-        <section class="contact-content" >
+        <section class="contact-content">
             <div class="contact-title">
                 <h4>Contact Me</h4>
                 <p>Get In Touch</p>
             </div>
             <div class="social">
-                <a href="mailto:https.ragu@gmail.com" aria-label="Send an email to Ragu">
+                <a
+                    href="mailto:https.ragu@gmail.com"
+                    aria-label="Send an email to Ragu"
+                >
                     <i class="fa fa-envelope"></i>
                 </a>
-                <a href="https://github.com/ragu8" aria-label="Visit Ragu's GitHub profile">
+                <a
+                    href="https://github.com/ragu8"
+                    aria-label="Visit Ragu's GitHub profile"
+                >
                     <i class="fa-brands fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/ragu8/" aria-label="Visit Ragu's LinkedIn profile">
+                <a
+                    href="https://www.linkedin.com/in/ragu8/"
+                    aria-label="Visit Ragu's LinkedIn profile"
+                >
                     <i class="fa-brands fa-linkedin"></i>
                 </a>
-                
             </div>
 
             <div class="contact">
-                <form id="contact-form" method="POST">
+                <form id="contact-form" on:submit={handleSubmit}>
                     <input
                         type="text"
                         name="name"
@@ -44,15 +93,18 @@
                         required
                     ></textarea>
                     <button type="submit" class="submit">Send Message</button>
-                    <span id="msg"></span>
-                    <!-- Message after form submission -->
+                    {#if msg}
+                        <p class={msg.includes("Error") ? "error" : "msg"} id="msg">
+                            {msg}
+                        </p>
+                    {/if}
                 </form>
             </div>
         </section>
     </div>
 {/if}
 
-<style lang="scss">
+<style>
     .contact-content {
         padding: 120px 0;
         color: #fff;
@@ -107,7 +159,7 @@
     #msg {
         color: #fff;
         font-size: 20px;
-        margin-top: -8px;
+        margin-top: 10px;
         display: block;
     }
 </style>
