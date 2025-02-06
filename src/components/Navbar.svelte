@@ -26,6 +26,9 @@
                     <a href="/projects" class={activePage === "/projects" ? "active" : ""} >Projects</a>
                 </li>
                 <li>
+                    <a href="/testimonials" class={activePage === "/testimonials" ? "active" : ""} >Testimonials</a>
+                </li>
+                <li>
                     <a href="/contact" class={activePage === "/contact" ? "active" : ""} >Contact</a>
                 </li>
             </ul>
@@ -40,6 +43,9 @@
                 </li>
                 <li>
                     <a href="/projects" class={activePage === "/projects" ? "active" : ""}>Projects</a>
+                </li>
+                <li>
+                    <a href="/testimonials" class={activePage === "/testimonials" ? "active" : ""} >Testimonials</a>
                 </li>
                 <li>
                     <a href="/contact" class={activePage === "/contact" ? "active" : ""}>Contact</a>
@@ -61,6 +67,9 @@
         width: 100%;
         z-index: 100;
         background-color: #202020;
+        @media only screen and (max-width: 767px) {
+            padding: 0px;
+        }
     }
 
     .header {
@@ -83,6 +92,9 @@
         left: 100%;
         transform: translate(-50%, -50%);
         z-index: 1;
+        @media only screen and (max-width: 767px) {
+            font-size: 15px;
+        }
     }
 
     .signature {

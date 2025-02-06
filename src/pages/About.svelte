@@ -4,8 +4,8 @@
 </script>
 
 {#if show}
-    <section class="about-area" transition:fade>
-        <div class="container">
+    <div class="container" transition:fade>
+        <section class="about-area">
             <div class="about">
                 <div class="about-content">
                     <h4>About Me</h4>
@@ -53,12 +53,12 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Education & Internship Section -->
-    <section class="education-content" transition:fade>
-        <div class="container">
+    <div class="container" transition:fade>
+        <section class="education-content">
             <div class="row">
                 <div class="education">
                     <h3 class="title">Education</h3>
@@ -143,14 +143,18 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 {/if}
 
 <style lang="scss">
     .about-area {
         padding-top: 50px;
         background-color: #202020;
+        @media only screen and (max-width: 767px) {
+            padding-top: 15px;
+        }
+
     }
     .about {
         display: flex;
@@ -171,6 +175,11 @@
         font-size: 40px;
         line-height: 70px;
         text-transform: capitalize;
+        @media only screen and (max-width: 767px) {
+            font-size: 25px;
+            line-height: 0px;
+            margin-bottom: 25px;
+        }
     }
     .about-content ul {
         color: #fff;

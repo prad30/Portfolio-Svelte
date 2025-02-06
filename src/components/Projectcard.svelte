@@ -25,6 +25,9 @@
         &:hover {
             border-color: #fed700;
         }
+        @media (max-width: 1050px) {
+            flex-basis: 48%; 
+        }
         @media only screen and (max-width: 767px) {
             flex-basis: 100%;
             margin-bottom: 30px;

@@ -17,8 +17,8 @@
   </script>
   
   {#if show}
-    <section class="project-content" transition:fade>
-      <div class="container">
+  <div class="container"transition:fade>
+    <section class="project-content" >
         <div class="project-title">
           <h4>My Projects</h4>
           <p>Discover my projects, where creativity meets innovation</p>
@@ -28,17 +28,23 @@
             <Projectcard {project} />
           {/each}
         </div>
-      </div>
     </section>
+  </div>
   {/if}
   
   <style>
     .project-content {
       padding: 50px 0;
+      @media only screen and (max-width: 767px) {
+            padding: 25px 0px;
+        }
     }
     .project-title {
       margin-bottom: 60px;
       text-align: center;
+      @media only screen and (max-width: 767px) {
+            margin-bottom: 30px;
+        }
     }
     .project-title h4 {
       text-transform: uppercase;
@@ -46,6 +52,10 @@
       line-height: 40px;
       color: #fed700;
       margin-bottom: 20px;
+      @media only screen and (max-width: 767px) {
+            font-size: 25px;
+            line-height: 10px;
+        }
     }
     .project-title p {
       color: #e5e5e5;

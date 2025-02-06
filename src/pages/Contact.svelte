@@ -104,17 +104,24 @@
     </div>
 {/if}
 
-<style>
+<style >
     .contact-content {
         padding: 120px 0;
         color: #fff;
         text-align: center;
+        @media only screen and (max-width: 767px) {
+            padding: 25px 0px;
+        }
     }
     .contact-content .contact-title h4 {
         font-size: 50px;
         text-transform: capitalize;
         color: #fed700;
         padding-bottom: 15px;
+        @media only screen and (max-width: 767px) {
+            font-size: 25px;
+            padding-bottom: 10px;
+        }
     }
     .contact-content .contact-title p {
         padding-bottom: 20px;

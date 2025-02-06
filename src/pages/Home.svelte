@@ -1,5 +1,5 @@
 <script>
-    import {slide} from 'svelte/transition';
+    import { slide } from "svelte/transition";
     let show = true;
 </script>
 
@@ -11,7 +11,6 @@
             </div>
             <div class="profile-text">
                 <h1>Hi I'm Ragu</h1>
-                <br /> <br />
                 <p>
                     <br />An enthusiastic Data Analyst, with a strong passion
                     for uncovering meaningful insights through the application
@@ -27,16 +26,24 @@
                 </div>
 
                 <div class="social">
-                    <a href="mailto:https.ragu@gmail.com" aria-label="Send an email to Ragu">
+                    <a
+                        href="mailto:https.ragu@gmail.com"
+                        aria-label="Send an email to Ragu"
+                    >
                         <i class="fa fa-envelope"></i>
                     </a>
-                    <a href="https://github.com/ragu8" aria-label="Visit Ragu's GitHub profile">
+                    <a
+                        href="https://github.com/ragu8"
+                        aria-label="Visit Ragu's GitHub profile"
+                    >
                         <i class="fa-brands fa-github"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/ragu8/" aria-label="Visit Ragu's LinkedIn profile">
+                    <a
+                        href="https://www.linkedin.com/in/ragu8/"
+                        aria-label="Visit Ragu's LinkedIn profile"
+                    >
                         <i class="fa-brands fa-linkedin"></i>
                     </a>
-                    
                 </div>
             </div>
         </div>
@@ -49,22 +56,31 @@
         justify-content: space-between;
         align-items: center;
         padding: 9.5rem 0rem;
-        @media (max-width: 1050px) {
+        @media (max-width: 1200px) {
             flex-direction: column;
             padding-top: 2rem;
         }
+        @media only screen and (max-width: 767px) {
+            padding: 1.25rem 0rem;
+        }
     }
 
-    .HomeElement .profile-photo {
+    .profile-photo {
         width: 450px;
         height: 450px;
         border-radius: 50%;
         overflow: hidden;
+        margin-bottom: 50px;
         border: 15px solid #444444;
         box-shadow: 5px 7px 25px rgba(0, 0, 0, 0.5);
+        @media (max-width: 1050px) {
+            width: 400px;
+            height: 400px; 
+        }
         @media only screen and (max-width: 767px) {
-            width: 350px;
-            height: 350px;
+            width: 300px;
+            height: 300px;
+            margin-bottom: 0px;
         }
     }
     .profile-photo img {
@@ -73,7 +89,7 @@
         transition: 0.8s;
     }
 
-    .HomeElement .profile-photo img:hover {
+    .profile-photo img:hover {
         transform: scale(1.2);
     }
     .profile-text {
@@ -85,31 +101,56 @@
         }
         @media only screen and (max-width: 767px) {
             width: 350px;
+            padding-left: 10px;
+            padding-right: 10px;
         }
     }
 
     .profile-text h1 {
         color: #fed700;
         font-size: 3.5rem;
+        padding-bottom: 20px;
+        @media only screen and (max-width: 767px) {
+            font-size: 2.5rem;
+            text-align: center;
+            padding-bottom: 10px;
+        }
     }
 
     .profile-text p {
         font-size: 1.2rem;
         color: #e5e5e5;
+        @media only screen and (max-width: 767px) {
+            text-align: justify;
+        }
+
     }
-    .profile-text .social i {
+    .social i {
         color: #e5e5e5;
         font-size: 25px;
         margin-right: 10px;
         transition: 0.5s;
+        &:hover {
+            color: #fed700;
+            transform: rotate(360deg);
+        }
+        @media only screen and (max-width: 767px) {
+            font-size: 18px;
+        }
     }
-    .profile-text .social i:hover {
-        color: #fed700;
-        transform: rotate(360deg);
+
+    .social{
+        @media only screen and (max-width: 767px) {
+            text-align: center;
+        }
     }
 
     .btn-group {
         margin: 45px 0;
+        @media only screen and (max-width: 767px) {
+            text-align: center;
+        }
+
     }
     .btn-group .btn {
         border-color: #d5d5d5;
@@ -124,11 +165,5 @@
     }
     .btn.active {
         border-color: #fed700;
-    }
-
-    @media only screen and (max-width: 767px) {
-        .HomeElement .profile-text p {
-            text-align: justify;
-        }
     }
 </style>
