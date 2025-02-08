@@ -1,16 +1,19 @@
 <script>
     export let testimonial;
+    let imageUrl = `http://localhost:5500/uploads/${testimonial.image}`; 
+
 </script>
 
 <div class="testimonial">
     <div class="testimonial-details">
-        <img src={testimonial.image} alt="" />
+        <img src={imageUrl} alt="" />
         <div>
             <h4 class="testimonial-name">{testimonial.name}</h4>
             <p>
                 {testimonial.position} ,
                 {testimonial.company}
             </p>
+            <p>{testimonial.country}</p>
         </div>
     </div>
     <div class="testimonial-review">
@@ -79,6 +82,7 @@
 
     .testimonial-details p {
         font-size: 12px;
+        text-align: left;
     }
 
     .checked {
