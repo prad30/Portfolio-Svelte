@@ -1,47 +1,50 @@
-# Svelte + Vite
+# Portfolio - Svelte
 
-This template should help get you started developing with Svelte in Vite.
+# Installation
 
-## Recommended IDE Setup
+Clone the repository:
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+git clone https://github.com/prad30/Portfolio-Svelte.git
 
-## Need an official Svelte framework?
+# Front-End Setup
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+cd Portfolio-Svelte
 
-## Technical considerations
+Install dependencies:
 
-**Why use this over SvelteKit?**
+npm install
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+npm run build
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+Start the development server:
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+npm run dev
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+# .env
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+create a .env file inside a backend folder which looks like
 
-**Why include `.vscode/extensions.json`?**
+DB_HOST=your_host
+DB_NAME=your_database
+DB_USER=your_username
+DB_PASS=your_password
+PORT=your_port
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+# upload folder to store images
 
-**Why enable `checkJs` in the JS template?**
+create a uploads folder in the root of the backend folder
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
+# Back-End
 
-**Why is HMR not preserving my local component state?**
+cd backend
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
+Install dependencies:
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+npm install
 
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+node index.js
+
+
+
+
+
