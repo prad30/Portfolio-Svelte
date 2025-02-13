@@ -88,7 +88,7 @@
     </div>
 </div>
 
-<style>
+<style lang="scss">
     .title {
         text-align: center;
         margin-bottom: 50px;

@@ -1,66 +1,41 @@
 [
-    {
-      "icon": "fa fa-handshake",
-      "title": "Recommendation System",
-      "link": "https://github.com/ragu8/RECOMMENDATION_SYSTEM",
-      "description": "Correlation | Pandas | Netflix Dataset",
-      "details": "The purpose of a recommender system is to suggest relevant items to users."
-    },
-    {
-      "icon": "fa fa-chart-bar",
-      "title": "Ozone Analysis",
-      "link": "https://github.com/ragu8/OZONE_ANALYSIS",
-      "description": "Visualization Techniques | Pandas & Matplotlib | NASA Dataset",
-      "details": "Visualize the fluctuation of ozone depletion area and significant global events from 1979 to 2022 using visualization techniques."
-    },
-    {
-      "icon": "fa fa-home",
-      "title": "House Price Prediction",
-      "link": "https://github.com/ragu8/HOUSE_PRICE_PREDICTION",
-      "description": "LinearRegression | Sklearn | House Prices Dataset",
-      "details": "To predict house prices using regression techniques, use a dataset containing relevant features and the corresponding house prices."
-    },
-    {
-      "icon": "fa fa-exchange",
-      "title": "GENERIC CLASSIFICATION",
-      "link": "https://github.com/ragu8/CLASSIFICATION",
-      "description": "Computer vision | Tensorflow | Image Datasets",
-      "details": "This Deep Learning model achieves a high accuracy of 90% or above using a Convolutional Neural Network (CNN) on any Image dataset."
-    },
-    {
-      "icon": "fa fa-clipboard",
-      "title": "IMAGE CLASSIFICATION USING QCNN",
-      "link": "https://github.com/ragu8/Quantum-Machine-Learning",
-      "description": "Quantum | Tensorflow-Quantum | MNIST Dataset",
-      "details": "Incorporating computation and QCNN in computer vision projects can potentially enhance results through advanced data processing and quantum machine learning."
-    },
-    {
-      "icon": "fa fa-expand",
-      "title": "HEART DISEASE PREDICTION",
-      "link": "https://github.com/ragu8/HEART_DISEASE_PREDICTION",
-      "description": "Statistical Analysis | EDA | ECG Dataset",
-      "details": "Machine Learning for Heart Disease Prediction: Repository for implementing machine learning algorithms to predict heart disease, contributing to early diagnosis and proactive healthcare management."
-    },
-    {
-      "icon": "fa fa-inr",
-      "title": "STOCK PRICE PREDICTION",
-      "link": "https://github.com/ragu8/com/blob/main/art.drawio.png",
-      "description": "Predictive Analytics | yfinance | Stock Data",
-      "details": "At Galaxy Technology Services, I built a Proof-Of-Concept using quantum computing to predict stock prices with an accuracy rate of 89%. This highlights the potential of quantum computing to significantly improve stock price prediction models."
-    },
-    {
-      "icon": "fa fa-forward",
-      "title": "VIDEO CLASSIFICATION",
-      "link": "https://github.com/ragu8/Video_classification",
-      "description": "Action Recognition | 3D CNN | Ucf101 Dataset",
-      "details": "Video Classification using UCF101: Repository containing code and models for classifying videos based on the UCF101 dataset, utilizing deep learning techniques for action recognition."
-    },
-    {
-      "icon": "fa fa-link",
-      "title": "PDF QUERYING",
-      "link": "https://github.com/ragu8/PDF_Extraction_and_DataMining_using_Langchain",
-      "description": "OpenAI API | Langchain | Pdf Mining",
-      "details": "PDF Extraction and Data Mining using Langchain: Repository for PDF querying, leveraging the OpenAI API and Langchain for efficient text extraction and data mining from PDF documents."
-    }
-  ]
-  
+  {
+    "icon": "fa fa-chart-line",
+    "title": "PHANTOM OPTIMIZATION",
+    "description": "Linear Programming Model",
+    "details": "At LivNsense, I worked on enhancing efficiency in decal printing. This involved intelligently distributing demand across predefined Phantom sheets to minimize wastage and optimize the printing process."
+  },
+  {
+    "icon": "fa fa-crosshairs",
+    "title": "OBJECT DETECTION IN MULTIPLE ROI",
+    "description": "Edge Computing | Multi-ROI Detection",
+    "details": "At LivNsense, I implemented object detection in multiple Regions of Interest (ROI), focusing on edge computing and real-time streaming."
+  },
+  {
+    "icon": "fa fa-inr",
+    "title": "STOCK PRICE PREDICTION",
+    "link": "https://github.com/ragu8/com/blob/main/art.drawio.png",
+    "description": "Predictive Analytics | yfinance | Stock Data",
+    "details": "At Galaxy Technology Services, I built a Proof-Of-Concept using quantum computing to predict stock prices with an accuracy rate of 89%."
+  },
+  {
+    "icon": "fa fa-cloud",
+    "title": "SAAS PLATFORM FOR IOT DESIGN",
+    "description": "Linear Programming Model",
+    "details": "At Galaxy Technology Services, I designed a scalable and user-friendly Software as a Service (SAAS) platform for IoT. The platform prioritized efficient data management and analysis from various IoT devices."
+  },
+  {
+    "icon": "fa fa-exchange",
+    "title": "GENERIC CLASSIFICATION",
+    "link": "https://github.com/ragu8/CLASSIFICATION",
+    "description": "Computer vision | Tensorflow | Image Datasets",
+    "details": "This Deep Learning model achieves a high accuracy of 90% or above using a Convolutional Neural Network (CNN) on any Image dataset."
+  },
+  {
+    "icon": "fa fa-clipboard",
+    "title": "IMAGE CLASSIFICATION USING QCNN",
+    "link": "https://github.com/ragu8/Quantum-Machine-Learning",
+    "description": "Quantum | Tensorflow-Quantum | MNIST Dataset",
+    "details": "Incorporating computation and QCNN in computer vision projects can potentially enhance results through advanced data processing and quantum machine learning."
+  }
+]

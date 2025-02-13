@@ -12,9 +12,9 @@
             <div class="profile-text">
                 <h1>Hi I'm Ragu</h1>
                 <p>
-                    <br />An enthusiastic Data Analyst, with a strong passion
-                    for uncovering meaningful insights through the application
-                    of data science techniques.
+                    <br />A passionate
+                    <span style="color:#fed700;">Researcher</span> leveraging Data
+                    Science, AI, and Quantum Computing to uncover valuable insights.
                 </p>
 
                 <div class="btn-group">
@@ -75,7 +75,7 @@
         box-shadow: 5px 7px 25px rgba(0, 0, 0, 0.5);
         @media (max-width: 1050px) {
             width: 400px;
-            height: 400px; 
+            height: 400px;
         }
         @media only screen and (max-width: 767px) {
             width: 300px;
@@ -120,10 +120,7 @@
     .profile-text p {
         font-size: 1.2rem;
         color: #e5e5e5;
-        @media only screen and (max-width: 767px) {
-            text-align: justify;
-        }
-
+        text-align: justify;
     }
     .social i {
         color: #e5e5e5;
@@ -139,7 +136,7 @@
         }
     }
 
-    .social{
+    .social {
         @media only screen and (max-width: 767px) {
             text-align: center;
         }
@@ -150,7 +147,6 @@
         @media only screen and (max-width: 767px) {
             text-align: center;
         }
-
     }
     .btn-group .btn {
         border-color: #d5d5d5;

@@ -40,7 +40,7 @@
     </div>
 {/if}
 
-<style>
+<style lang="scss">
     .testimonial-content {
         position:relative;
         margin-top: 35px;

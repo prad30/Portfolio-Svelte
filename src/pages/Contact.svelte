@@ -30,7 +30,6 @@
                     msg = "";
                 }, 5000);
 
-                // Reset form fields
                 name = "";
                 email = "";
                 message = "";
@@ -48,8 +47,8 @@
     <div class="container" transition:fade>
         <section class="contact-content">
             <div class="contact-title">
-                <h4>Contact Me</h4>
-                <p>Get In Touch</p>
+                <h4>CONTACT ME</h4>
+                <p>let's turn data into magic!</p>
             </div>
             <div class="social">
                 <a
@@ -104,9 +103,9 @@
     </div>
 {/if}
 
-<style >
+<style lang="scss">
     .contact-content {
-        padding: 120px 0;
+        padding: 90px 0;
         color: #fff;
         text-align: center;
         @media only screen and (max-width: 767px) {
@@ -114,10 +113,11 @@
         }
     }
     .contact-content .contact-title h4 {
-        font-size: 50px;
+        font-size: 40px;
         text-transform: capitalize;
         color: #fed700;
         padding-bottom: 15px;
+        margin-bottom: 20px;
         @media only screen and (max-width: 767px) {
             font-size: 25px;
             padding-bottom: 10px;
@@ -128,7 +128,7 @@
     }
     .contact {
         padding: 40px 0px;
-        max-width: 800px;
+        max-width: 550px;
         margin: auto;
     }
 

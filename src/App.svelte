@@ -9,7 +9,8 @@
     import Footer from "./components/Footer.svelte";
     import Testimonial from "./pages/Testimonial.svelte";
     import WriteTestimony from "./pages/WriteTestimony.svelte";
-    
+    import Experience from "./pages/Experience.svelte";
+
     let loading = false;
 
     function startLoading() {
@@ -39,6 +40,7 @@
 
     <Route path="/" component={Home} />
     <Route path="/about" component={About} />
+    <Route path="/experience" component={Experience} />
     <Route path="/projects" component={Projects} />
     <Route path="/testimonials" component={Testimonial} />
     <Route path="/writetestimony" component={WriteTestimony} />
@@ -51,6 +53,7 @@
     :global(.container) {
         width: 1170px;
         margin: auto;
+        hyphens: auto;
         @media only screen and (min-width: 1000px) and (max-width: 1200px) {
             width: 970px;
         }
@@ -58,8 +61,8 @@
             width: 750px;
         }
         @media only screen and (max-width: 767px) {
-            width: 350px;
-            padding: 15px;
+            width: 380px;
+            padding:10px 0px;
         }
     }
 

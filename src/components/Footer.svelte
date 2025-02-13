@@ -5,7 +5,7 @@
     <footer class="footer">
         <small class="message">Thanks for visiting and happy coding!</small>
         <small class="copyright"
-            >&copy; Copyright 2023. All rights reserved.</small
+            >&copy; Copyright 2025. All rights reserved.</small
         >
     </footer>
 </div>

@@ -23,6 +23,9 @@
                     <a href="/about" class={activePage === "/about" ? "active" : ""} >About</a>
                 </li>
                 <li>
+                    <a href="/experience" class={activePage === "/experience" ? "active" : ""} >Experience</a>
+                </li>
+                <li>
                     <a href="/projects" class={activePage === "/projects" ? "active" : ""} >Projects</a>
                 </li>
                 <li>
@@ -42,6 +45,9 @@
                     <a href="/about" class={activePage === "/about" ? "active" : ""}>About</a>
                 </li>
                 <li>
+                    <a href="/experience" class={activePage === "/experience" ? "active" : ""} >Experience</a>
+                </li>
+                <li>
                     <a href="/projects" class={activePage === "/projects" ? "active" : ""}>Projects</a>
                 </li>
                 <li>
@@ -52,7 +58,7 @@
                 </li>
             </ul>
 
-            <button class="menu_icon" on:click={() => (menuOpen = !menuOpen)} aria-label="Toggle menu">
+            <button class="menu-icon" on:click={() => (menuOpen = !menuOpen)} aria-label="Toggle menu">
                 <i class="fa {menuOpen ? 'fa-times' : 'fa-bars'}"></i>
             </button>
         </div>
@@ -76,6 +82,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 5px 10px;
     }
 
     .logo {
@@ -93,7 +100,7 @@
         transform: translate(-50%, -50%);
         z-index: 1;
         @media only screen and (max-width: 767px) {
-            font-size: 15px;
+            font-size: 13px;
         }
     }
 
@@ -101,6 +108,11 @@
         width: 100px;
         height: auto;
         margin-right: 10px;
+        @media only screen and (max-width: 767px) {
+            width: 85px;
+            margin-right: 5px;
+        }
+
     }
 
     .navbar {
@@ -122,17 +134,38 @@
         color: #fed700 !important;
     }
 
-    .menu_icon {
-        color: #fff;
-        font-size: 18px;
-        cursor: pointer;
+
+    .menu-icon {
         display: none;
+        width: 40px;
+        height: 40px;
+        /* background: #fed700; */
+        /* color:#202020; */
+        background:#202020; 
+        color: #fed700;
+        border-radius: 50%;
         border: none;
-        background: none;
+        cursor: pointer;
+        box-shadow: 0px 0px 2px rgba(254, 215, 0,1);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .menu-icon i {
+        font-size: 22px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .fa-bars {
+        transform: rotate(0deg);
+    }
+
+    .fa-times {
+        transform: rotate(180deg);
+        /* color: #ff4d4d; */
     }
 
     @media only screen and (max-width: 767px) {
-        .menu_icon {
+        .menu-icon {
             display: block;
         }
 
@@ -140,7 +173,7 @@
             display: none;
             flex-direction: column;
             position: absolute;
-            top: 80px;
+            top: 60px;
             right: 0;
             background-color: #202020;
             width: 100%;

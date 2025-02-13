@@ -7,7 +7,7 @@
     <h4><a href={project.link} target="_blank">{project.title}</a></h4>
     <p>{project.description}</p>
     <br />
-    <li>{project.details}</li>
+    <li class="project-details">{project.details}</li>
 </div>
 
 <style lang="scss">
@@ -48,6 +48,9 @@
         margin: 20px 0;
     }
     .project p {
+        text-align: justify;
+    }
+    .project-details{
         text-align: justify;
     }
 </style>
