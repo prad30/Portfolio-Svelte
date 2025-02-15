@@ -1,23 +1,27 @@
-const { Testimonial } = require("../models/testimonialModel");
+const {Testimonial} = require("../models/testimonialModel");
 
 const addTestimonial = async (req, res) => {
     try {
-        const { name, position, company, country, review } = req.body;
+        const { name, position, company, country, review, rating } = req.body; // Add rating here
         const image = req.file ? req.file.filename : null;
 
-        if (!name || !position || !company || !country || !review) {
+        // Ensure all fields are provided
+        if (!name || !position || !company || !country || !review || !rating) {
             return res.status(400).json({ error: "All fields are required!" });
         }
 
+        // Create the new testimonial
         const testimonial = await Testimonial.create({
             name,
             position,
             company,
             country,
             review,
-            image
+            image,
+            rating
         });
 
+        // Respond with the created testimonial
         res.status(201).json({ message: "Testimonial saved successfully!", testimonial });
     } catch (error) {
         console.error("Error saving testimonial:", error);

@@ -1,6 +1,13 @@
 <script>
 </script>
 
+<svelte:head>
+    <title>Experience</title>
+    <meta name="description" content="Explore my professional experience in AI engineering, data analytics, and research roles at AIvalynx, Approlabs, LivNsense, and Galaxy Technology Services.">
+    <meta name="keywords" content="AI Engineer, GenAI, Research Analyst, Data Analyst, AI Development, Chatbot, Machine Learning, Optimization, Quantum Computing,LivNsense,Galaxy Technology Services, AIvalynx, Approlabs ">
+    <meta property="og:url" content="https://ragu8.in/experience">
+
+</svelte:head>
 <div class="container">
     <div class="internship">
         <h3 class="title">Experience</h3>

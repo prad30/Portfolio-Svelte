@@ -1,11 +1,14 @@
 <script>
+    import { ADD_TESTIMONY_API} from "../constants";
+
     let name = "";
     let position = "";
     let company = "";
     let country = "";
     let review = "";
     let image = null;
-    let isSubmitting = false; 
+    let rating =5; 
+    let isSubmitting = false;
     let imagePreview = "";
 
     function handleImageChange(event) {
@@ -17,7 +20,6 @@
 
     async function submitForm(event) {
         event.preventDefault();
-
         if (isSubmitting) return;
 
         const formData = new FormData();
@@ -27,34 +29,41 @@
         formData.append("country", country);
         formData.append("review", review);
         formData.append("image", image);
+        formData.append("rating", rating.toString()); 
 
-        isSubmitting = true; 
+        isSubmitting = true;
 
         try {
-            const response = await fetch("http://localhost:5500/api/testimonials/add", {
+            const response = await fetch(ADD_TESTIMONY_API, {
                 method: "POST",
                 body: formData,
             });
 
             if (response.ok) {
                 alert("Testimonial submitted successfully!");
-                
+
                 name = position = company = country = review = "";
                 image = null;
                 imagePreview = "";
+                rating = 5; 
             } else {
                 const error = await response.json();
-                alert(` Failed to submit: ${error.message || 'Unknown error'}`);
+                alert(`Failed to submit: ${error.message || "Unknown error"}`);
             }
         } catch (error) {
             console.error("Error:", error);
             alert("Server error.");
         } finally {
-            isSubmitting = false; 
+            isSubmitting = false;
         }
     }
 </script>
-
+<svelte:head>
+    <title>Write a Testimony</title>
+    <meta name="description" content="Submit your review and testimony here." />
+    <meta name="keywords" content="testimonial, review, feedback, write a review" />
+    <meta property="og:url" content="https://ragu8.in/writetestimony">
+</svelte:head>
 <div class="container">
     <div class="testimony-form">
         <div class="title">
@@ -64,24 +73,75 @@
         <form on:submit={submitForm}>
             <label class="file-upload">
                 Upload Image
-                <input type="file" name="image" required on:change={handleImageChange} />
+                <input
+                    type="file"
+                    name="image"
+                    required
+                    on:change={handleImageChange}
+                />
             </label>
 
             {#if imagePreview}
                 <div class="image-preview">
-                    <img src={imagePreview} alt="" />
+                    <img src={imagePreview} alt="Preview" />
                 </div>
             {/if}
 
-            <input type="text" placeholder="Your Name" bind:value={name} required />
-            <input type="text" placeholder="Position" bind:value={position} required />
-            <input type="text" placeholder="Company Name" bind:value={company} required />
-            <input type="text" placeholder="Country" bind:value={country} required />
-            <textarea placeholder="Review About Me" rows="5" bind:value={review} required></textarea>
+            <input
+                type="text"
+                placeholder="Your Name"
+                bind:value={name}
+                required
+            />
+            <input
+                type="text"
+                placeholder="Position"
+                bind:value={position}
+                required
+            />
+            <input
+                type="text"
+                placeholder="Company Name"
+                bind:value={company}
+                required
+            />
+            <input
+                type="text"
+                placeholder="Country"
+                bind:value={country}
+                required
+            />
+            <textarea
+                placeholder="Review About Me"
+                rows="5"
+                bind:value={review}
+                required
+            ></textarea>
+
+            <div class="rating-container">
+                <label for="rating" class="rating-label">Rate (1 - 5):</label>
+                <input id="rating" type="range" min="1" max="5" step="0.5" bind:value={rating} class="rating-slider"/>
+            
+                <div class="stars">
+                    {#each Array(5).fill(0) as _, i}
+                        {#if i + 1 <= Math.floor(rating)}
+                            <i class="fa fa-star checked"></i> <!-- Full Star -->
+                        {:else if i + 0.5 === rating}
+                            <i class="fa fa-star-half-alt checked"></i> <!-- Half Star -->
+                        {:else}
+                            <i class="fa fa-star"></i> <!-- Empty Star -->
+                        {/if}
+                    {/each}
+                </div>
+            
+                <div class="rating-value">
+                    <span>{rating}</span> / 5
+                </div>
+            </div>
 
             <div class="btn-container">
                 <button type="submit" class="submit" disabled={isSubmitting}>
-                    {isSubmitting ? 'Submitting...' : 'Submit'}
+                    {isSubmitting ? "Submitting..." : "Submit"}
                 </button>
             </div>
         </form>
@@ -89,6 +149,52 @@
 </div>
 
 <style lang="scss">
+    .rating-container {
+        text-align: center;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #282828;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .rating-label {
+        font-size: 18px;
+        font-weight: bold;
+        color: #f5f5f5;
+        margin-bottom: 10px;
+    }
+
+    .rating-slider {
+        width: 100%;
+        max-width: 300px;
+        height: 8px;   
+    }
+
+    
+
+    .stars {
+        font-size: 20px;
+        color: #f5f5f5;
+        margin-bottom: 10px;
+    }
+
+    .checked {
+        color: #ffcc00;
+    }
+
+    .rating-value {
+        font-size: 20px;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .rating-value span {
+        color: #ffcc00;
+    }
+
     .title {
         text-align: center;
         margin-bottom: 50px;

@@ -1,7 +1,6 @@
 <script>
     export let testimonial;
-    let imageUrl = `http://localhost:5500/uploads/${testimonial.image}`; 
-
+    let imageUrl = `http://localhost:5500/uploads/${testimonial.image}`;
 </script>
 
 <div class="testimonial">
@@ -22,14 +21,19 @@
             {testimonial.review}
         </p>
         <br />
-        <i class="fa fa-star checked"></i>
-        <i class="fa fa-star checked"></i>
-        <i class="fa fa-star checked"></i>
-        <i class="fa fa-star checked"></i>
-        <i class="fa fa-star"></i>
+        <div class="stars">
+            {#each Array(5).fill(0) as _, i}
+                {#if i + 1 <= Math.floor(testimonial.rating)}
+                    <i class="fa fa-star checked"></i> <!-- Full Star -->
+                {:else if i + 0.5 === testimonial.rating}
+                    <i class="fa fa-star-half-alt checked"></i> <!-- Half Star -->
+                {:else}
+                    <i class="fa fa-star"></i> <!-- Empty Star -->
+                {/if}
+            {/each}
+        </div>
     </div>
 </div>
-
 
 <style>
     .testimonial {
@@ -48,7 +52,7 @@
             border-color: #fed700;
         }
         @media (max-width: 1050px) {
-            flex-basis: 48%; 
+            flex-basis: 48%;
         }
         @media only screen and (max-width: 767px) {
             flex-basis: 100%;
@@ -85,7 +89,13 @@
         text-align: left;
     }
 
+    .stars {
+        font-size: 20px;
+        color: #f5f5f5;
+        margin-bottom: 10px;
+    }
+
     .checked {
-        color: #fed700;
+        color: #ffcc00;
     }
 </style>
